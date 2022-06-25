@@ -25,7 +25,7 @@ add_action('wp_ajax_freshdesk', 'wpdeft_freshdesk');
 add_action('wp_ajax_nopriv_freshdesk', 'wpdeft_freshdesk');
  
 function wpdeft_freshdesk(){
- $id = $_POST['id'];
+ $id = filter_input(INPUT_POST, "id", FILTER_SANITIZE_STRING);
     
     $email = "info@photopatic.com";
 $password = "Akira.888888001122";
